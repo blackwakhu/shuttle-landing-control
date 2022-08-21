@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shuttle Landing Control</title>
+    <link href="{{url_for('static',filename='css/style.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div>
+        <h1>Shuttle Landing Control</h1>
+        <form action="/predict" method="post">
+            <label for="stability">stability</label><br>
+            <input type="radio" name="stability" id="" value="1">stab 
+            <input type="radio" name="stability" id="" value="2">xstab<br>
+            <label for="error">error</label><br>
+            <input type="radio" name="error" id="" value="1">XL 
+            <input type="radio" name="error" id="" value="2">LX
+            <input type="radio" name="error" id="" value="3">MM
+            <input type="radio" name="error" id="" value="4">SS<br>
+            <label for="sign">sign</label><br>
+            <input type="radio" name="sign" id="" value="1">pp
+            <input type="radio" name="sign" id="" value="2">nn<br>
+            <label for="wind">wind</label><br>
+            <input type="radio" name="wind" id="" value="1">head
+            <input type="radio" name="wind" id="" value="2">tail<br>
+            <label for="magnitude">magnitude</label><br>
+            <input type="radio" name="magnitude" id="" value="1">low 
+            <input type="radio" name="magnitude" id="" value="2">medium
+            <input type="radio" name="magnitude" id="" value="3">strong
+            <input type="radio" name="magnitude" id="" value="4">out of range<br>
+            <label for="visibility">visibility</label><br>
+            <input type="radio" name="visibility" id="" value="1">yes 
+            <input type="radio" name="visibility" id="" value="2">no<br>
+            <input type="submit" value="predict" class="btn btn-primary btn-block">
+        </form>
+        {{prediction}}
+    </div>
+</body>
+</html>
